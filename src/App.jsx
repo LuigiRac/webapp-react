@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css'
 
 import HomePage from '../components/pages/HomePage'
@@ -9,8 +9,13 @@ function App() {
 
   return (
     <>
-      <HomePage />
-      <SingleMovie />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" Component={HomePage} />
+          <Route path="/SingleMovie" Component={SingleMovie} />
+        </Routes>
+
+      </BrowserRouter >
     </>
   )
 }
