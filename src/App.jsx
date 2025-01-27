@@ -1,12 +1,16 @@
 import { useState } from 'react'
 import './App.css'
 
+import HomePage from '../components/pages/HomePage'
+import SingleMovie from '../components/pages/SingleMovie'
+
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <>
-
+      <HomePage />
+      <SingleMovie />
     </>
   )
 }
