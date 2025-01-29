@@ -8,12 +8,11 @@ export default function HeaderContent() {
 
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
-                        <li className="nav-item">
-                            <NavLink className="nav-link" to="/HomePage">Home Page</NavLink>
-                        </li>
+
                         <li className="nav-item">
                             <NavLink className="nav-link" to="/AboutUs">About Us</NavLink>
                         </li>
+
 
                     </ul>
                 </div>
