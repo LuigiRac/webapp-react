@@ -1,4 +1,4 @@
-function SingleMovie() {
+export default function SingleMovie() {
     const title = "Single Movie";
 
     return (
@@ -10,4 +10,3 @@ function SingleMovie() {
 
 
 
-export default SingleMovie

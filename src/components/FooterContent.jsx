@@ -1,5 +1,5 @@
 export default function FooterContent() {
-    const title = "Footer";
+    const title = "FOOTER";
 
     return (
         <h1>

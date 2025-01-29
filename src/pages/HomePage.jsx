@@ -1,4 +1,4 @@
-function HomePage() {
+export default function HomePage() {
     const title = "Home Page";
 
     return (
@@ -10,4 +10,3 @@ function HomePage() {
 
 
 
-export default HomePage
