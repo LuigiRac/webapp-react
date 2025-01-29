@@ -1,6 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css'
 
+import DefaultLayout from "./pages/DefaultLayout";
+import HeaderContent from "./components/Headercontent";
+import FooterContent from "./components/FooterContent";
 import HomePage from './pages/HomePage'
 import SingleMovie from './pages/SingleMovie'
 
@@ -11,8 +14,10 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" Component={HomePage} />
-          <Route path="/SingleMovie" Component={SingleMovie} />
+          <Route Component={DefaultLayout}>
+            <Route path="/" Component={HomePage} />
+            <Route path="/SingleMovie" Component={SingleMovie} />
+          </Route>
         </Routes>
       </BrowserRouter >
     </>
