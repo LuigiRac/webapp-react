@@ -15,7 +15,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route Component={DefaultLayout}>
-            <Route path="/" Component={HomePage} />
+            <Route path="/" Component={MainContent} />
+            <Route path="/HomePage" Component={HomePage} />
             <Route path="/SingleMovie" Component={SingleMovie} />
           </Route>
         </Routes>
