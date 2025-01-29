@@ -4,11 +4,15 @@ import FooterContent from "../components/FooterContent"
 
 export default function DefaultLayout() {
     return (
-        <div>
+        <>
             <HeaderContent />
-            <Outlet />
+            <main>
+                <Outlet />
+            </main>
             <FooterContent />
-        </div>
+        </>
+
+
     );
 };
 

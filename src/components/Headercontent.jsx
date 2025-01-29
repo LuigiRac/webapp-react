@@ -14,9 +14,6 @@ export default function HeaderContent() {
                         <li className="nav-item">
                             <NavLink className="nav-link" to="/AboutUs">About Us</NavLink>
                         </li>
-                        <li className="nav-item">
-                            <NavLink className="nav-link" to="/PostList">Post List</NavLink>
-                        </li>
 
                     </ul>
                 </div>
