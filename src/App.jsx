@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css'
 
-import HomePage from './components/pages/HomePage'
-import SingleMovie from './components/pages/SingleMovie'
+import HomePage from './pages/HomePage'
+import SingleMovie from './pages/SingleMovie'
 
 function App() {
 
