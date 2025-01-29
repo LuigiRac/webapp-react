@@ -6,7 +6,7 @@ import DefaultLayout from "./pages/DefaultLayout";
 import HomePage from './pages/HomePage'
 import SingleMovie from './pages/SingleMovie'
 
-function App() {
+export default function App() {
 
 
   return (
@@ -23,4 +23,4 @@ function App() {
   )
 }
 
-export default App
+
