@@ -14,7 +14,6 @@ function App() {
           <Route path="/" Component={HomePage} />
           <Route path="/SingleMovie" Component={SingleMovie} />
         </Routes>
-
       </BrowserRouter >
     </>
   )
