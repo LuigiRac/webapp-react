@@ -2,8 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css'
 
 import DefaultLayout from "./pages/DefaultLayout";
-import HeaderContent from "./components/Headercontent";
-import FooterContent from "./components/FooterContent";
+import MainContent from "./components/MainContent"
 import HomePage from './pages/HomePage'
 import SingleMovie from './pages/SingleMovie'
 
