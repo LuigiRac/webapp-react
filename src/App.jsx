@@ -15,7 +15,7 @@ export default function App() {
         <Routes>
           <Route Component={DefaultLayout}>
             <Route path="/" Component={HomePage} />
-            <Route path="/SingleMovie" Component={SingleMovie} />
+            <Route path="/SingleMovie/:id" Component={SingleMovie} />
           </Route>
         </Routes>
       </BrowserRouter >

@@ -9,7 +9,7 @@ export default function HomePage() {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        axios.get("http://localhost:3000/movies")
+        axios.get(`http://localhost:3000/movies`)
             .then(response => {
                 setMovies(response.data);
                 setLoading(false);
