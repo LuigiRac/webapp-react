@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { NavLink } from "react-router-dom"
 
 
 export default function HomePage() {
@@ -28,7 +29,7 @@ export default function HomePage() {
     }
 
     return (
-        <h1>
+        <>
             <div>
                 <div className="d-flex justify-content-center gap-3 m-4">
                     {
@@ -38,7 +39,7 @@ export default function HomePage() {
                                 <div className="card-body">
                                     <h5 className="card-title">{movie.title}</h5>
                                     <p className="card-text">{movie.abstract}</p>
-                                    <a href="#" className="btn btn-primary" >Leggi di più</a>
+                                    <NavLink className="nav-link" to="/SingleMovie">Dettagli Film</NavLink>
                                     {/* <button onClick={() => deletePost(movie.id)} className="btn btn-primary">Delete</button> */}
 
                                 </div>
@@ -48,7 +49,7 @@ export default function HomePage() {
 
                 </div >
             </div>
-        </h1 >
+        </ >
     )
 };
 
