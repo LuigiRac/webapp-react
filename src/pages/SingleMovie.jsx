@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NavLink, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 
 
@@ -7,13 +7,14 @@ import axios from "axios";
 
 export default function SingleMovie() {
     const { id } = useParams();
-    const [movie, setMovie] = useState(null);
+    const [movie, setMovie] = useState({});
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
         axios.get(`http://localhost:3000/movies/${id}`)
             .then(response => {
+                console.log(response.data);
                 setMovie(response.data);
                 setLoading(false);
             })
@@ -23,6 +24,7 @@ export default function SingleMovie() {
             })
     }, [id]);
 
+    console.log(movie);
 
     return (
         <>

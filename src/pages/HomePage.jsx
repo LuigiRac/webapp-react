@@ -9,8 +9,10 @@ export default function HomePage() {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/movies`)
+        axios.get("http://localhost:3000/movies")
             .then(response => {
+
+
                 setMovies(response.data);
                 setLoading(false);
             })
@@ -34,14 +36,14 @@ export default function HomePage() {
                 <div className="d-flex justify-content-center gap-3 m-4">
                     {
                         movies.map((movie) => (
+
                             <div className="card" style={{ width: '18rem' }} key={movie.id}>
+                                <h1>{movie.id}</h1>
                                 <img className="card-img-top" src={movie.image_path} alt={movie.title} />
                                 <div className="card-body">
                                     <h5 className="card-title">{movie.title}</h5>
                                     <p className="card-text">{movie.abstract}</p>
                                     <NavLink className="nav-link" to={`/singleMovie/${movie.id}`}> Dettagli Film</NavLink>
-                                    {/* <button onClick={() => deletePost(movie.id)} className="btn btn-primary">Delete</button> */}
-
                                 </div>
                             </div>
                         ))
@@ -49,7 +51,7 @@ export default function HomePage() {
 
                 </div >
             </div >
-        </ >
+        </>
     )
 };
 
