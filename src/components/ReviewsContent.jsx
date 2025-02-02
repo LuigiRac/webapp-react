@@ -1,6 +1,8 @@
 export default function ReviewsContent({ review }) {
 
     const { id, text, vote, name } = review;
+
+
     return (
         <div key={id} className="card mb-4">
             <div className="card-body">

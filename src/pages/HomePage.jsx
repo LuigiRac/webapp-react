@@ -40,7 +40,7 @@ export default function HomePage() {
 
                             <div className="card" style={{ width: '18rem' }} key={movie.id}>
                                 <h1>{movie.id}</h1>
-                                <img className="card-img-top" src={`${imgPath}`} alt={movie.title} />
+                                <img className="card-img-top" src={movie.image} alt={movie.title} />
                                 <div className="card-body">
                                     <h5 className="card-title">{movie.title}</h5>
                                     <p className="card-text">{movie.abstract}</p>
