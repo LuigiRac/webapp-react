@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import ReviewsContent from "../components/ReviewsContent";
+import FormReviews from "../components/FormReviews";
 
 
 
@@ -55,6 +56,10 @@ export default function SingleMovie() {
                         {renderReviews()}
                     </div>
                 </div>
+            </section>
+
+            <section className="container-fluid py-4">
+                <FormReviews movie_id={movie?.id} />
             </section>
 
 

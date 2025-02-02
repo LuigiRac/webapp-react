@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 
 const initialData = {
@@ -7,15 +7,17 @@ const initialData = {
     vote: 0,
 };
 
-export default function FormReviws() {
+export default function FormReviews() {
     const [formData, setFormData] = useState(initialData);
 
-    function handleSubmit() {
+    function handleSubmit(e) {
         e.preventDefault();
+        console.log(formData);
+
     }
 
     function setFieldValue(e) {
-        console.log(e.target.value);
+        console.log(e.target.value, e.target.name);
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
 
@@ -53,6 +55,7 @@ export default function FormReviws() {
                             type="number"
                             min="1"
                             max="5"
+                            step="1"
                             name="vote"
                             className="form-control"
                             value={formData.vote}
