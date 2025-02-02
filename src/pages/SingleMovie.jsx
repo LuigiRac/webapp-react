@@ -28,8 +28,8 @@ export default function SingleMovie() {
 
 
     function renderReviews() {
-        if (movie?.movies?.length > 0) {
-            return movie.movies.map((review) => (
+        if (movie?.reviews?.length > 0) {
+            return movie.reviews.map((review) => (
                 <div className="col-12" key={review.id}>
                     <ReviewsContent review={review} />
                 </div>
@@ -41,7 +41,7 @@ export default function SingleMovie() {
 
     return (
         <>
-            <div>
+            <section>
                 <div className="card" style={{ width: '18rem' }} key={movie.id}>
                     {/* <img className="card-img-top" src={movie.image} alt={movie.title} /> */}
                     <div className="card-body">
@@ -55,7 +55,9 @@ export default function SingleMovie() {
                         {renderReviews()}
                     </div>
                 </div>
-            </div>
+            </section>
+
+
         </>
     )
 };
