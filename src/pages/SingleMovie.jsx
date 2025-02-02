@@ -12,18 +12,24 @@ export default function SingleMovie() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    useEffect(() => {
+    function getData() {
         axios.get(`http://localhost:3000/movies/${id}`)
-            .then(response => {
-                console.log(response.data);
-                setMovie(response.data);
+            .then(res => {
+                console.log(res.data);
+                setMovie(res.data);
                 setLoading(false);
             })
             .catch(error => {
                 setError(error.message);
                 setLoading(false);
-            })
+            });
+    }
+
+
+    useEffect(() => {
+        getData();
     }, [id]);
+
 
     // console.log(movie);
 

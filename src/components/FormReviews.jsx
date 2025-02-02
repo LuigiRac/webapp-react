@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 
 const initialData = {
@@ -7,12 +8,25 @@ const initialData = {
     vote: 0,
 };
 
+const apiUrl = import.meta.env.VITE_API_URL;
+const movieEndPoint = "/movies";
+
 export default function FormReviews() {
     const [formData, setFormData] = useState(initialData);
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(formData);
+        // console.log(formData);
+        axios.post(`${apiUrl}${movieEndPoint}/${movie_id}/reviews`, formData).then((res) => {
+            console.log(res);
+            setFormData(initialData)
+
+        }).catch((error) => {
+            console.log(error);;
+        }).finally(() => {
+            console.log("finito");
+
+        })
 
     }
 
