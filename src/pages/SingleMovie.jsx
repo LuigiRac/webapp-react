@@ -5,6 +5,8 @@ import ReviewsContent from "../components/ReviewsContent";
 import FormReviews from "../components/FormReviews";
 
 
+const apiUrl = import.meta.env.VITE_API_URL;
+const movieEndPoint = "/movies";
 
 export default function SingleMovie() {
     const { id } = useParams();
@@ -12,26 +14,40 @@ export default function SingleMovie() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
+    useEffect(getData, [id]);
     function getData() {
-        axios.get(`http://localhost:3000/movies/${id}`)
-            .then(res => {
+        setLoading(true);
+        axios
+            .get(`http://localhost:3000/movies/${id}`)
+            .then((res) => {
                 console.log(res.data);
+
                 setMovie(res.data);
-                setLoading(false);
             })
-            .catch(error => {
-                setError(error.message);
+            .catch((error) => {
+                console.log(error);
+
+            })
+            .finally(() => {
+                console.log("Finito");
                 setLoading(false);
             });
     }
 
+    // useEffect(() => {
+    //     axios.get(`http://localhost:3000/movies/${id}`)
+    //         .then(res => {
+    //             console.log(res.data);
+    //             setMovie(res.data);
+    //             setLoading(false);
+    //         })
+    //         .catch(error => {
+    //             setError(error.message);
+    //             setLoading(false);
+    //         })
+    // }, [id]);
 
-    useEffect(() => {
-        getData();
-    }, [id]);
-
-
-    // console.log(movie);
+    console.log(movie);
 
 
     function renderReviews() {
