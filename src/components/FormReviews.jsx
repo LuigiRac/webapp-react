@@ -9,9 +9,9 @@ const initialData = {
 };
 
 const apiUrl = import.meta.env.VITE_API_URL;
-const movieEndPoint = "/movies";
+const movieEndPoint = "movies";
 
-export default function FormReviews() {
+export default function FormReviews({ movie_id, reloadReviews }) {
     const [formData, setFormData] = useState(initialData);
 
     function handleSubmit(e) {
@@ -20,6 +20,7 @@ export default function FormReviews() {
         axios.post(`${apiUrl}${movieEndPoint}/${movie_id}/reviews`, formData).then((res) => {
             console.log(res);
             setFormData(initialData)
+            reloadReviews();
 
         }).catch((error) => {
             console.log(error);;

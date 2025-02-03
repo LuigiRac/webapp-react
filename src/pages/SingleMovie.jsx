@@ -6,7 +6,7 @@ import FormReviews from "../components/FormReviews";
 
 
 const apiUrl = import.meta.env.VITE_API_URL;
-const movieEndPoint = "/movies";
+const movieEndPoint = "movies";
 
 export default function SingleMovie() {
     const { id } = useParams();
@@ -18,36 +18,22 @@ export default function SingleMovie() {
     function getData() {
         setLoading(true);
         axios
-            .get(`http://localhost:3000/movies/${id}`)
+            .get(`${apiUrl}${movieEndPoint}/${id}`)
             .then((res) => {
-                console.log(res.data);
-
+                // console.log(res.data);
                 setMovie(res.data);
             })
             .catch((error) => {
                 console.log(error);
-
             })
             .finally(() => {
                 console.log("Finito");
                 setLoading(false);
             });
+
     }
 
-    // useEffect(() => {
-    //     axios.get(`http://localhost:3000/movies/${id}`)
-    //         .then(res => {
-    //             console.log(res.data);
-    //             setMovie(res.data);
-    //             setLoading(false);
-    //         })
-    //         .catch(error => {
-    //             setError(error.message);
-    //             setLoading(false);
-    //         })
-    // }, [id]);
-
-    console.log(movie);
+    // console.log(movie);
 
 
     function renderReviews() {
@@ -81,7 +67,7 @@ export default function SingleMovie() {
             </section>
 
             <section className="container-fluid py-4">
-                <FormReviews movie_id={movie?.id} />
+                <FormReviews movie_id={movie?.id} reloadReviews={getData} />
             </section>
 
 
