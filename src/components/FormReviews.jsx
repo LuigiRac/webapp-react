@@ -33,6 +33,7 @@ export default function FormReviews({ movie_id, reloadReviews }) {
         }
         axios.post(`${apiUrl}${movieEndPoint}/${movie_id}/reviews`, formData).then((res) => {
             console.log(res);
+            setFormValid(true)
             setFormData(initialData)
             reloadReviews();
 
