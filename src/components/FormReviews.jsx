@@ -14,9 +14,23 @@ const movieEndPoint = "movies";
 export default function FormReviews({ movie_id, reloadReviews }) {
     const [formData, setFormData] = useState(initialData);
 
+    const [isFormValid, setFormValid] = useState(true);
+
+    function validateForm() {
+        if (!formData.text || !formData.name) return false;
+        if (isNaN(formData.vote) || formData.vote < 1 || formData.vote > 5)
+            return false;
+        return true;
+    }
+
     function handleSubmit(e) {
         e.preventDefault();
         // console.log(formData);
+
+        if (!validateForm(false)) {
+            setFormValid(false)
+            return;
+        }
         axios.post(`${apiUrl}${movieEndPoint}/${movie_id}/reviews`, formData).then((res) => {
             console.log(res);
             setFormData(initialData)
@@ -43,6 +57,12 @@ export default function FormReviews({ movie_id, reloadReviews }) {
                 <h5>Aggiungi la tua recensione</h5>
             </header>
             <div className="card-body">
+                {!isFormValid && (
+                    <div className="alert alert-danger mb-3">
+                        Data Form is not valid!
+                    </div>
+                )}
+
                 <form
                     onSubmit={handleSubmit}>
                     <div className="form-group">
